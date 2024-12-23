@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+
+.score-tab {
+  @include mat.table-overrides((
+    background-color: #cce7d4, // set a color for table background
+
+    header-container-height: 65px, // <th> tags (the header) height
+    header-headline-color: #f4f4f9, // set a color for font in <th> tags (the header)
+    header-headline-weight: bold, // set bold for font in <th> tags (the header)
+    header-headline-size: 25px, // set a size for font in <th> tags (the header)
+
+    row-item-container-height: 75px, // <td> tags (the lines) height
+    row-item-outline-color: #f4f4f9, // set a color for table lines
+    row-item-label-text-color: #555555, // set a color for font in <td> tags (the lines)
+    row-item-label-text-size: 15px, // set font size for font in <td> tags (the lines)
+
+    footer-container-height: 1000px // footer height
+
+  ));
+}
+
