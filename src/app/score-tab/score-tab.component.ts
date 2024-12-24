@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 export interface PeriodicElement {
   name: string;
@@ -24,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'app-score-tab',
-  imports: [MatTableModule, MatSortModule],
+  imports: [MatTableModule, MatSortModule, MatFormFieldModule, MatInputModule],
   templateUrl: './score-tab.component.html',
   styleUrl: './score-tab.component.scss'
 })
@@ -36,6 +38,11 @@ export class ScoreTabComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.sort = this.sort;
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

@@ -1,5 +1,10 @@
 @use '@angular/material' as mat;
 
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
 .score-tab {
   @include mat.table-overrides((
     background-color: #cce7d4, // set a color for table background
