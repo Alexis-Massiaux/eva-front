@@ -22,6 +22,11 @@
     footer-container-height: 1000px // footer height
 
   ));
+
+  .mat-row .mat-cell {
+    height: 50px;
+    font-size: 18px;
+  }
 }
 
 .mat-column-position {
