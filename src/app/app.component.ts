@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {ScoreTabComponent} from './score-tab/score-tab.component';
+import { ScoreTabComponent } from './components/score-tab/score-tab.component';
 
 @Component({
   selector: 'app-root',
