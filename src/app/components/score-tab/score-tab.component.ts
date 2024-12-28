@@ -3,25 +3,17 @@ import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Player } from '@models/player';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+
+const ELEMENT_DATA: Player[] = [
+  {pseudo: 'Azoy', seasonPass: true, level: "50", gameNumber: 100, wins: 90, defeats: 9, ties: 1,
+    gameTime: '05:45:00', kills: 103, deaths: 52, supports: 0, percentKills: 0.67896542, killsForDeaths: 0.8,
+    distance: 1654789.75, averageDistance: 256.87, maxSeriesKills: 8, maxDamage: 2808, totalDamage: 56987},
+  {pseudo: '2023', seasonPass: true, level: "41", gameNumber: 88, wins: 44, defeats: 44, ties: 0,
+    gameTime: '04:59:59', kills: 81, deaths: 60, supports: 15, percentKills: 0.45896542, killsForDeaths: 0.49,
+    distance: 1054789, averageDistance: 250, maxSeriesKills: 13, maxDamage: 2456, totalDamage: 49321},
 ];
 
 @Component({
@@ -31,7 +23,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrl: './score-tab.component.scss'
 })
 export class ScoreTabComponent implements AfterViewInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] =
+    ['pseudo', 'seasonPass', 'level', 'gameNumber', 'wins', 'defeats', 'ties',
+    'gameTime', 'kills', 'deaths', 'supports', 'percentKills', 'killsForDeaths',
+    'distance', 'averageDistance', 'maxSeriesKills', 'maxDamage', 'totalDamage'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatSort) sort!: MatSort;
