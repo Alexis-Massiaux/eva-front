@@ -6,7 +6,8 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/app/components/*"],
-      "@models/*": ["src/app/models/*"]
+      "@models/*": ["src/app/models/*"],
+      "@shared/*": ["src/app/shared/*"]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
