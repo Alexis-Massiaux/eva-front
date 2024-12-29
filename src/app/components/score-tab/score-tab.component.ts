@@ -1,3 +1,4 @@
+import { CommonModule} from '@angular/common';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
@@ -18,7 +19,7 @@ const ELEMENT_DATA: Player[] = [
 
 @Component({
   selector: 'app-score-tab',
-  imports: [MatTableModule, MatSortModule, MatFormFieldModule, MatInputModule],
+  imports: [MatTableModule, MatSortModule, MatFormFieldModule, MatInputModule, CommonModule],
   templateUrl: './score-tab.component.html',
   styleUrl: './score-tab.component.scss'
 })
@@ -37,4 +38,7 @@ export class ScoreTabComponent implements AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  getColumnName(column: string): string {
+    return StringEnumUtil.getEnumValueByKey(ScoreTabColumn, column);
+  }
 }
