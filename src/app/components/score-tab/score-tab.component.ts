@@ -4,7 +4,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Player } from '@models/player';
-
+import { ScoreTabColumn } from '@models/score-tab-column';
 
 
 const ELEMENT_DATA: Player[] = [
@@ -23,10 +23,7 @@ const ELEMENT_DATA: Player[] = [
   styleUrl: './score-tab.component.scss'
 })
 export class ScoreTabComponent implements AfterViewInit {
-  displayedColumns: string[] =
-    ['pseudo', 'seasonPass', 'level', 'gameNumber', 'wins', 'defeats', 'ties',
-    'gameTime', 'kills', 'deaths', 'supports', 'percentKills', 'killsForDeaths',
-    'distance', 'averageDistance', 'maxSeriesKills', 'maxDamage', 'totalDamage'];
+  displayedColumns: string[] = Object.keys(ScoreTabColumn);
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatSort) sort!: MatSort;
