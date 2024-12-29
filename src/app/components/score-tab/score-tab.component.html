@@ -20,3 +20,9 @@
     <td class="mat-cell" colspan="4">No data matching the filter "{{ input.value }}"</td>
   </tr>
 </mat-table>
+
+<mat-slide-toggle
+  [(ngModel)]="checked"
+  (ngModelChange)="onToggleValueChange($event)">
+</mat-slide-toggle>
+
